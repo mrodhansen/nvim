@@ -7,6 +7,11 @@ vim.keymap.set("n", "<leader>gs", function()
     require('neogit').open()
 end, {desc = '[G]it [S]tatus'})
 
-vim.keymap.set("n", "<leader>fa", 'ggVG=')
---lsp commands
-vim.keymap.set("n", "L", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>pfa", 'ggVG=', {desc = '[P]oject [F]ormat [A]ll'})
+vim.keymap.set("n", "L", vim.diagnostic.open_float, {desc = 'Open Diagnostic'})
+
+vim.keymap.set('n', '<A-j>', ':m .-2<CR>==', { noremap = true, silent = true })
+vim.keymap.set('n', '<A-k>', ':m .+1<CR>==', { noremap = true, silent = true })
+
+vim.keymap.set('v', '<A-j>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
+vim.keymap.set('v', '<A-k>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
