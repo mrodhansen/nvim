@@ -17,6 +17,19 @@ return {
     config = function()
         require("conform").setup({
             formatters_by_ft = {
+                javascript = { "prettier" },
+                typescript = { "prettier" },
+                javascriptreact = { "prettier" },
+                typescriptreact = { "prettier" },
+                vue = { "prettier" },
+                svelte = { "prettier" },
+                html = { "prettier" },
+                css = { "prettier" },
+                json = { "prettier" },
+                yaml = { "prettier" },
+                markdown = { "prettier" },
+                python = { "black" },
+                lua = { "stylua" },
             }
         })
         local cmp = require('cmp')
@@ -32,7 +45,16 @@ return {
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "lua_ls",
+                "ts_ls",
+                "html",
+                "cssls",
                 "tailwindcss",
+                "vue_ls",
+                "svelte",
+                "pyright",
+                "jsonls",
+                "yamlls",
+                "bashls",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
@@ -55,7 +77,6 @@ return {
                     })
                     vim.g.zig_fmt_parse_errors = 0
                     vim.g.zig_fmt_autosave = 0
-
                 end,
             }
         })
@@ -82,9 +103,13 @@ return {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' }, -- For luasnip users.
             }, {
-                    { name = 'buffer' },
-                })
+                { name = 'buffer' },
+            })
         })
+
+        vim.keymap.set("n", "<leader>pfp", function()
+            require("conform").format({ async = true, lsp_fallback = true })
+        end)
 
         vim.diagnostic.config({
             -- update_in_insert = true,
