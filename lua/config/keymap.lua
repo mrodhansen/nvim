@@ -11,7 +11,7 @@ vim.keymap.set("n", "ga", vim.lsp.buf.code_action, {desc = '[C]ode [A]ction'})
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, {desc = '[G]o to [D]efinition'})
 
 -- Neocodeium
-vim.keymap.set("i", "<Tab>", function()
+vim.keymap.set("i", "<S-Tab>", function()
     require("neocodeium").accept()
 end)
 vim.keymap.set("i", "<C>", function()

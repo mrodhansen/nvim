@@ -24,6 +24,7 @@ return {
     dashboard.button( "L", "  > LeetCode", ":Leet<CR>"),
     dashboard.button( "c", "  > Config", ":cd ~/.config/nvim | Telescope find_files<CR>"),
     dashboard.button( "l", "󰒲  > Lazy", ":Lazy<CR>"),
+    dashboard.button( "g", "  > Github", ":Neogit<CR>"),
     dashboard.button( "h", "  > Settings", ":cd ~/.config/hypr | Telescope find_files<CR>"),
     dashboard.button( "q", "  > Quit", ":qa<CR>"),
 }
