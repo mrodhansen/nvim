@@ -124,13 +124,14 @@ return {
                     },
                     vimgrep_arguments = {
                         "rg",
-                        "--follow",        
-                        "--hidden",        
-                        "--no-heading",    
+                        "--follow",
+                        "--hidden",
+                        "--no-ignore",
+                        "--no-heading",
                         "--with-filename",
                         "--line-number",
-                        "--column",        
-                        "--smart-case",    
+                        "--column",
+                        "--smart-case",
                         "--glob=!/.git/*",
                         "--glob=!/.idea/",
                         "--glob=!**/.vscode/",
@@ -143,10 +144,12 @@ return {
                 pickers = {
                     find_files = {
                         hidden = true,
+                        no_ignore = true,
                         find_command = {
                             "rg",
                             "--files",
                             "--hidden",
+                            "--no-ignore",
                             "--glob=!**/.git/",
                             "--glob=!/.idea/*",
                             "--glob=!/.vscode/",
