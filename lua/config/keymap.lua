@@ -1,9 +1,11 @@
 -- Project
 vim.keymap.set("n", "<leader>pv", "<cmd>NvimTreeFindFileToggle<cr>", {desc = '[P]roject [V]iew'})
-vim.keymap.set("n", "<leader>pfa", 'ggVG=', {desc = '[P]oject [F]ormat [A]ll'})
+-- Buffer
 vim.keymap.set("n", "<leader>bc", function()
   vim.api.nvim_command("bd!")
 end, {desc = '[B]uffer [C]lose'})
+-- Format
+vim.keymap.set("n", "<leader>fa", 'ggVG=', {desc = '[F]ormat [A]ll'})
 
 -- Diagnostics
 vim.keymap.set("n", "gl", vim.diagnostic.open_float, {desc = 'Open Diagnostic'})

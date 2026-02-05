@@ -107,7 +107,7 @@ return {
             })
         })
 
-        vim.keymap.set("n", "<leader>pfp", function()
+        vim.keymap.set("n", "<leader>fp", function()
             require("conform").format({ async = true, lsp_fallback = true })
         end)
 

@@ -20,4 +20,17 @@ return {
         "OXY2DEV/markview.nvim",
         lazy = false,
     },
+    {
+        "tris203/precognition.nvim",
+        lazy = false,
+        opts = {
+            startVisible = true,
+        },
+    },
+    {
+        "m4xshen/hardtime.nvim",
+        lazy = false,
+        dependencies = { "MunifTanjim/nui.nvim" },
+        opts = {},
+    },
 }
