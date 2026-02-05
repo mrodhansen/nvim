@@ -1,5 +1,5 @@
 -- Project
-vim.keymap.set("n", "<leader>pv", "<cmd>NvimTreeToggle<cr>", {desc = '[P]roject [V]iew'})
+vim.keymap.set("n", "<leader>pv", "<cmd>NvimTreeFindFileToggle<cr>", {desc = '[P]roject [V]iew'})
 vim.keymap.set("n", "<leader>pfa", 'ggVG=', {desc = '[P]oject [F]ormat [A]ll'})
 vim.keymap.set("n", "<leader>bc", function()
   vim.api.nvim_command("bd!")
@@ -28,6 +28,9 @@ vim.keymap.set('n', '<A-k>', ':m .+1<CR>==', { noremap = true, silent = true })
 
 vim.keymap.set('v', '<A-j>', ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set('v', '<A-k>', ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+
+-- Database
+vim.keymap.set("n", "<leader>db", "<cmd>DBUIToggle<cr>", {desc = '[D]ata[B]ase UI'})
 
 -- Git
 vim.keymap.set("n", "<leader>gs", ":LazyGit<CR>", {desc = '[G]it [S]tatus'})

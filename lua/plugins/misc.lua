@@ -14,6 +14,10 @@ return {
         'numToStr/Comment.nvim',
         config = function()
             require('Comment').setup()
-         end,
+        end,
+    },
+    {
+        "OXY2DEV/markview.nvim",
+        lazy = false,
     },
 }
