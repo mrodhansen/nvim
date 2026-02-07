@@ -102,10 +102,6 @@ return {
                 })
             end
 
-            -- Keep your Alt+d shortcut for directory search
-            vim.keymap.set("n", "<C-d>", search_and_scope_into_directory)
-            -- Alt+f for file serach
-            vim.keymap.set('n', '<C-f>', builtin.find_files)
             vim.keymap.set('n', '<leader>sd', search_and_scope_into_directory, { desc = '[S]earch [D]irectory' })
         end
     },
