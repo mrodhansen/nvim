@@ -116,48 +116,34 @@ return {
                 },
                 defaults = {
                     file_ignore_patterns = {
-                        "node_modules", "build", "dist", "yarn.lock"
+                        "%.git/",
                     },
                     vimgrep_arguments = {
                         "rg",
                         "--follow",
                         "--hidden",
-                        "--no-ignore",
                         "--no-heading",
                         "--with-filename",
                         "--line-number",
                         "--column",
                         "--smart-case",
-                        "--glob=!/.git/*",
-                        "--glob=!/.idea/",
-                        "--glob=!**/.vscode/",
-                        "--glob=!/build/*",
-                        "--glob=!/dist/",
-                        "--glob=!/yarn.lock",
-                        "--glob=!/package-lock.json",
+                        "--glob=!**/.git/*",
                     },
                 },
                 pickers = {
                     find_files = {
                         hidden = true,
-                        no_ignore = true,
                         find_command = {
                             "rg",
                             "--files",
                             "--hidden",
-                            "--no-ignore",
                             "--glob=!**/.git/",
-                            "--glob=!/.idea/*",
-                            "--glob=!/.vscode/",
-                            "--glob=!**/build/",
-                            "--glob=!/dist/*",
-                            "--glob=!/yarn.lock",
-                            "--glob=!**/package-lock.json",
                         },
                     },
                 },
             })
             require("telescope").load_extension("ui-select")
+            require("telescope").load_extension("fzf")
         end,
     },
 }
