@@ -84,24 +84,22 @@ return {
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         cmp.setup({
-            completion = {
-                autocomplete = false,
-            },
             snippet = {
                 expand = function(args)
-                    require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+                    require('luasnip').lsp_expand(args.body)
                 end,
             },
             mapping = cmp.mapping.preset.insert({
-                ['<A-c>'] = cmp.mapping.complete(),
+                ['<C-CR>'] = cmp.mapping.complete(),
                 ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
                 ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
                 ['<CR>'] = cmp.mapping.confirm({ select = true }),
             }),
             sources = cmp.config.sources({
-                { name = "copilot", group_index = 2 },
+                { name = 'codeium', max_item_count = 3 },
                 { name = 'nvim_lsp' },
-                { name = 'luasnip' }, -- For luasnip users.
+                { name = 'luasnip' },
+                { name = 'path' },
             }, {
                 { name = 'buffer' },
             })
