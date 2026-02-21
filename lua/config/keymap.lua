@@ -31,5 +31,5 @@ vim.keymap.set("n", "<leader>db", "<cmd>DBUIToggle<cr>", {desc = '[D]ata[B]ase U
 vim.keymap.set("n", "<leader>gs", ":LazyGit<CR>", {desc = '[G]it [S]tatus'})
 vim.keymap.set("n", "<leader>gr", ":DiffviewOpen main<CR>", {desc = '[G]it diff vs main ([R]eview)'})
 vim.keymap.set("n", "<leader>gc", ":DiffviewClose<CR>", {desc = '[G]it close diffview'})
-vim.keymap.set("n", "<leader>gpm", ":Git pull origin main<CR>", {desc = '[G]it [P]ull origin [M]ain'})
+-- vim.keymap.set("n", "<leader>gpm", ":Git pull origin main<CR>", {desc = '[G]it [P]ull origin [M]ain'})
 
