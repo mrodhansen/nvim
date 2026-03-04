@@ -102,7 +102,10 @@ return {
                 { name = 'path' },
             }, {
                 { name = 'buffer' },
-            })
+            }),
+            experimental = {
+                ghost_text = true,
+            },
         })
 
         vim.keymap.set("n", "<leader>fp", function()
