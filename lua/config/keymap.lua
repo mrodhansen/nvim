@@ -11,12 +11,10 @@ vim.keymap.set("n", "<leader>fa", 'ggVG=', {desc = '[F]ormat [A]ll'})
 vim.keymap.set("n", "gl", vim.diagnostic.open_float, {desc = 'Open Diagnostic'})
 vim.keymap.set("n", "ga", vim.lsp.buf.code_action, {desc = '[C]ode [A]ction'})
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, {desc = '[G]o to [D]efinition'})
+vim.keymap.set("n", "gy", vim.lsp.buf.type_definition, {desc = '[G]o to T[y]pe Definition'})
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration, {desc = '[G]o to [D]eclaration'})
+vim.keymap.set("n", "gi", vim.lsp.buf.implementation, {desc = '[G]o to [I]mplementation'})
 
-
--- Swap j and k
--- vim.keymap.set("n", "j", "k")
--- vim.keymap.set("n", "k", "j")
---
 -- Move lines
 vim.keymap.set('n', '<A-k>', ':m .-2<CR>==', { noremap = true, silent = true })
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>==', { noremap = true, silent = true })
