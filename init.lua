@@ -27,6 +27,20 @@ vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
 
+vim.opt.list = true
+vim.opt.listchars = {
+    tab = "│ ",
+    leadmultispace = "│   ",
+    trail = "·",
+    nbsp = "␣",
+}
+vim.api.nvim_create_autocmd("ColorScheme", {
+    callback = function()
+        vim.api.nvim_set_hl(0, "Whitespace", { fg = "#3a3a3a" })
+    end,
+})
+vim.api.nvim_set_hl(0, "Whitespace", { fg = "#3a3a3a" })
+
 -- rest of plugins
 require("config.lazy")
 require("config.keymap")
