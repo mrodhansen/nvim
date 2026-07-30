@@ -1,5 +1,6 @@
 -- Project
 vim.keymap.set("n", "<leader>pv", "<cmd>NvimTreeFindFileToggle<cr>", {desc = '[P]roject [V]iew'})
+vim.keymap.set("v", "<leader>y", "\"+y", {desc = '[Y]ank to clipboard'})
 -- Buffer
 vim.keymap.set("n", "<leader>bc", function()
   vim.api.nvim_command("bd!")

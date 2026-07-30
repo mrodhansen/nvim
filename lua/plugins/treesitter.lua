@@ -8,35 +8,35 @@ return {
         },
     },
     {
-
         'nvim-treesitter/nvim-treesitter',
+        branch = 'master',
         lazy = false,
         build = ':TSUpdate',
         config = function()
-            require('nvim-treesitter').setup({})
-            require('nvim-treesitter').install({
-                'javascript',
-                'typescript',
-                'tsx',
-                'lua',
-                'python',
-                'c',
-                'html',
-                'css',
-                'json',
-                'yaml',
-                'bash',
-                'markdown',
-                'markdown_inline',
-                'vue',
-                'svelte',
-                'rust',
-                'dockerfile',
-            })
-            vim.api.nvim_create_autocmd('FileType', {
-                callback = function(args)
-                    pcall(vim.treesitter.start, args.buf)
-                end,
+            require('nvim-treesitter.configs').setup({
+                ensure_installed = {
+                    'javascript',
+                    'typescript',
+                    'tsx',
+                    'lua',
+                    'python',
+                    'c',
+                    'html',
+                    'css',
+                    'json',
+                    'yaml',
+                    'bash',
+                    'markdown',
+                    'markdown_inline',
+                    'vue',
+                    'svelte',
+                    'rust',
+                    'dockerfile',
+                    'prisma',
+                },
+                auto_install = true,
+                highlight = { enable = true },
+                indent = { enable = true },
             })
         end,
     },

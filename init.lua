@@ -36,10 +36,10 @@ vim.opt.listchars = {
 }
 vim.api.nvim_create_autocmd("ColorScheme", {
     callback = function()
-        vim.api.nvim_set_hl(0, "Whitespace", { fg = "#3a3a3a" })
+        vim.api.nvim_set_hl(0, "Whitespace", { fg = "#404040" })
     end,
 })
-vim.api.nvim_set_hl(0, "Whitespace", { fg = "#3a3a3a" })
+vim.api.nvim_set_hl(0, "Whitespace", { fg = "#404040" })
 
 -- rest of plugins
 require("config.lazy")

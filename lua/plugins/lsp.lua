@@ -55,6 +55,7 @@ return {
                 "jsonls",
                 "yamlls",
                 "bashls",
+                "prismals",
             },
             handlers = {
                 function(server_name) -- default handler (optional)
