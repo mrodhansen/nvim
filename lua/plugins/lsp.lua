@@ -64,6 +64,42 @@ return {
                     }
                 end,
 
+                -- Large Nx monorepos (e.g. future/monorepo): default tsserver
+                -- OOMs and go-to-definition stops working until restart.
+                ts_ls = function()
+                    local lspconfig = require("lspconfig")
+                    local root_pattern = lspconfig.util.root_pattern
+                    lspconfig.ts_ls.setup({
+                        capabilities = capabilities,
+                        root_dir = root_pattern("nx.json", "package.json", ".git"),
+                        single_file_support = false,
+                        init_options = {
+                            hostInfo = "neovim",
+                            maxTsServerMemory = 8192,
+                            preferences = {
+                                includePackageJsonAutoImports = "on",
+                                importModuleSpecifierPreference = "project-relative",
+                            },
+                        },
+                        settings = {
+                            typescript = {
+                                tsserver = {
+                                    maxTsServerMemory = 8192,
+                                },
+                                preferences = {
+                                    includePackageJsonAutoImports = "on",
+                                    importModuleSpecifierPreference = "project-relative",
+                                },
+                            },
+                            javascript = {
+                                tsserver = {
+                                    maxTsServerMemory = 8192,
+                                },
+                            },
+                        },
+                    })
+                end,
+
                 zls = function()
                     local lspconfig = require("lspconfig")
                     lspconfig.zls.setup({
@@ -111,7 +147,7 @@ return {
 
         vim.keymap.set("n", "<leader>fp", function()
             require("conform").format({ async = true, lsp_fallback = true })
-        end)
+        end, { desc = 'Format file' })
 
         vim.diagnostic.config({
             -- update_in_insert = true,

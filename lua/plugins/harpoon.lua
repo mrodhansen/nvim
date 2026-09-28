@@ -32,7 +32,7 @@ return {
 
         -- Toggle harpoon quick menu via Telescope
         -- vim.keymap.set("n", "<C-e>", function() toggle_telescope(harpoon:list()) end, { desc = "Harpoon: Open menu" })
-        vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+        vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "Harpoon: Open menu" })
 
         -- Navigate to harpooned files by index (qwerty: 1-4 keys)
         vim.keymap.set("n", "<C-1>", function() harpoon:list():select(1) end, { desc = "Harpoon: File 1" })
